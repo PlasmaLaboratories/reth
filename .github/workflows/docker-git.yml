@@ -9,11 +9,11 @@ on:
 
 env:
   REPO_NAME: ${{ github.repository_owner }}/reth
-  IMAGE_NAME: ${{ github.repository_owner }}/reth
-  OP_IMAGE_NAME: ${{ github.repository_owner }}/op-reth
+  IMAGE_NAME: ${{ github.repository_owner }}/plasma-execution
+  OP_IMAGE_NAME: ${{ github.repository_owner }}/op-plasma-execution
   CARGO_TERM_COLOR: always
-  DOCKER_IMAGE_NAME: ghcr.io/${{ github.repository_owner }}/reth
-  OP_DOCKER_IMAGE_NAME: ghcr.io/${{ github.repository_owner }}/op-reth
+  DOCKER_IMAGE_NAME: ghcr.io/${{ github.repository_owner }}/plasma-execution
+  OP_DOCKER_IMAGE_NAME: ghcr.io/${{ github.repository_owner }}/op-plasma-execution
   DOCKER_USERNAME: ${{ github.actor }}
   GIT_SHA: ${{ github.sha }}
 
@@ -30,8 +30,6 @@ jobs:
         build:
           - name: 'Build and push the git-sha-tagged reth image'
             command: 'make PROFILE=maxperf GIT_SHA=$GIT_SHA docker-build-push-git-sha'
-          - name: 'Build and push the git-sha-tagged op-reth image'
-            command: 'make IMAGE_NAME=$OP_IMAGE_NAME DOCKER_IMAGE_NAME=$OP_DOCKER_IMAGE_NAME GIT_SHA=$GIT_SHA PROFILE=maxperf op-docker-build-push-git-sha'
     steps:
       - uses: actions/checkout@v5
       - uses: rui314/setup-mold@v1
