@@ -8,12 +8,12 @@ on:
   workflow_dispatch: {}
 
 env:
-  REPO_NAME: ${{ github.repository_owner }}/reth
-  IMAGE_NAME: ${{ github.repository_owner }}/plasma-execution
-  OP_IMAGE_NAME: ${{ github.repository_owner }}/op-plasma-execution
+  REPO_NAME: plasmalaboratories/reth
+  IMAGE_NAME: plasmalaboratories/plasma-execution
+  OP_IMAGE_NAME: plasmalaboratories/op-plasma-execution
   CARGO_TERM_COLOR: always
-  DOCKER_IMAGE_NAME: ghcr.io/${{ github.repository_owner }}/plasma-execution
-  OP_DOCKER_IMAGE_NAME: ghcr.io/${{ github.repository_owner }}/op-plasma-execution
+  DOCKER_IMAGE_NAME: ghcr.io/plasmalaboratories/plasma-execution
+  OP_DOCKER_IMAGE_NAME: ghcr.io/plasmalaboratories/op-plasma-execution
   DOCKER_USERNAME: ${{ github.actor }}
   GIT_SHA: ${{ github.sha }}
 
