@@ -16,7 +16,7 @@ CARGO_TARGET_DIR ?= target
 ifeq ($(OS),Windows_NT)
     FEATURES ?= asm-keccak min-debug-logs
 else
-    FEATURES ?= jemalloc asm-keccak min-debug-logs
+    FEATURES ?= jemalloc asm-keccak min-trace-logs
 endif
 
 # Cargo profile for builds. Default is for local builds, CI uses an override.
@@ -36,7 +36,7 @@ EEST_TESTS_URL := https://github.com/ethereum/execution-spec-tests/releases/down
 EEST_TESTS_DIR := ./testing/ef-tests/execution-spec-tests
 
 # The docker image name
-DOCKER_IMAGE_NAME ?= ghcr.io/paradigmxyz/reth
+DOCKER_IMAGE_NAME ?= ghcr.io/plasmalaboratories/plasma-execution
 
 ##@ Help
 
