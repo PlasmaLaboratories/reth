@@ -1,0 +1,54 @@
+[package]
+name = "reth-xpl-webhook"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+homepage.workspace = true
+repository.workspace = true
+exclude.workspace = true
+publish = false
+
+[lints]
+workspace = true
+
+[[bin]]
+name = "reth-xpl-webhook"
+path = "src/main.rs"
+
+[dependencies]
+# reth
+reth-ethereum = { workspace = true, features = ["full", "cli", "node-api"] }
+reth-exex.workspace = true
+reth-libmdbx.workspace = true
+reth-revm.workspace = true
+reth-storage-api.workspace = true
+
+# revm / evm
+revm-inspectors.workspace = true
+alloy-evm.workspace = true
+
+# alloy
+alloy-primitives.workspace = true
+alloy-consensus.workspace = true
+
+# crypto
+hmac.workspace = true
+sha2.workspace = true
+
+# async + http
+tokio = { workspace = true, features = ["sync", "rt-multi-thread", "macros", "time"] }
+futures.workspace = true
+reqwest = { workspace = true, features = ["json"] }
+
+# misc
+eyre.workspace = true
+tracing.workspace = true
+metrics.workspace = true
+serde = { workspace = true, features = ["derive"] }
+serde_json = { workspace = true, features = ["std"] }
+clap = { workspace = true, features = ["derive", "env"] }
+rand.workspace = true
+
+[dev-dependencies]
+tempfile = "3"
