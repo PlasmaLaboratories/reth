@@ -10,6 +10,7 @@ exclude = [".github/"]
 [workspace]
 members = [
     "bin/reth-bench/",
+    "bin/reth-xpl-webhook/",
     "bin/reth/",
     "crates/storage/rpc-provider/",
     "crates/chain-state/",
